@@ -1,8 +1,9 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { PrismaVectorStore } from 'langchain/vectorstores'
-import { OpenAIEmbeddings } from 'langchain/embeddings'
+import { OpenAIEmbeddings } from 'langchain/embeddings/openai'
 import { LLMChain, StuffDocumentsChain, VectorDBQAChain } from 'langchain/chains'
-import { OpenAI, PromptTemplate } from 'langchain'
+import { OpenAI } from 'langchain/llms/openai'
+import { PromptTemplate } from 'langchain'
 import { PrismaClient, Prisma, documents } from '@prisma/client'
 import { personalPromptTemplate } from '../../gloria.config'
 
